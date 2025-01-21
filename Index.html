@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #af4c4c;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #home {
+            background: url('https://via.placeholder.com/1920x500') no-repeat center center;
+            background-size: cover;
+            color: white;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #about {
+            background-color: #f4f4f4;
+        }
+
+        #services {
+            background-color: #eaf7ff;
+        }
+
+        #contact {
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #af4c4c;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Company Logo</div>
+            <div class="menu">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to Our Company</h1>
+        <p>Your gateway to cutting-edge technology and services</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service">
+                <h3>Software Development</h3>
+                <p>Custom software solutions tailored to your needs.</p>
+            </div>
+            <div class="service">
+                <h3>Application & Mobile Development</h3>
+                <p>Innovative mobile and app solutions for all platforms.</p>
+            </div>
+            <div class="service">
+                <h3>Business Analytics</h3>
+                <p>Data-driven insights to boost your business performance.</p>
+            </div>
+            <div class="service">
+                <h3>3D Mapping</h3>
+                <p>High-resolution 3D models for various applications.</p>
+            </div>
+            <div class="service">
+                <h3>LIDAR Service</h3>
+                <p>Precision laser scanning for accurate measurements.</p>
+            </div>
+            <div class="service">
+                <h3>BIM</h3>
+                <p>Building Information Modeling for smart construction.</p>
+            </div>
+            <div class="service">
+                <h3>Data Engineering</h3>
+                <p>Efficient data pipelines and storage solutions.</p>
+            </div>
+            <div class="service">
+                <h3>Drone Mapping</h3>
+                <p>Advanced drone technology for accurate mapping.</p>
+            </div>
+            <div class="service">
+                <h3>GIS & AI</h3>
+                <p>Geospatial intelligence combined with AI solutions.</p>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a leading technology solutions provider, delivering high-quality services in software development, analytics, and more. Our team of experts is dedicated to helping you achieve your goals with innovative and efficient solutions.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Reach out to us for more information or to discuss your requirements. We’re here to help you!</p>
+        <p>Email: info@company.com | Phone: +123 456 7890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Company Name. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
