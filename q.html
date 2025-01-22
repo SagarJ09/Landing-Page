@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sliding Welcome Text</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+      }
+
+      .welcome-text {
+        position: relative;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        white-space: nowrap;
+        animation: slideIn 4s linear infinite;
+      }
+
+      @keyframes slideIn {
+        0% {
+          transform: translateX(-100%);
+        }
+        50% {
+          transform: translateX(50%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="welcome-text">Welcome to Our Company</div>
+    </div>
+  </body>
+</html>

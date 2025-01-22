@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Landing Page with Sliding Switch Bar</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            color: white; /* Text color changed to white */
+            background-color: black; /* Background color changed to black */
         }
 
         header {
-            background-color: #af4c4c;
+            background-color: #222;
             color: white;
             padding: 10px 20px;
             position: sticky;
@@ -37,36 +39,77 @@
             text-decoration: underline;
         }
 
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
         #home {
-            background: url('https://via.placeholder.com/1920x500') no-repeat center center;
-            background-size: cover;
+            background: black;
             color: white;
             height: 500px;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            text-align: center;
         }
 
-        #about {
-            background-color: #f4f4f4;
+        #home h1 {
+            font-size: 3rem;
+            margin: 0 0 20px;
         }
 
-        #services {
-            background-color: #eaf7ff;
+        .switch-bar {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            background-color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            height: 50px;
+            opacity: 0;
         }
 
-        #contact {
-            background-color: #f4f4f4;
+        .switch-bar span {
+            position: absolute;
+            left: -100%; /* Start off-screen */
+            transition: transform 1s ease-in-out; /* Smooth animation */
+        }
+
+        .switch-bar.active {
+            opacity: 1; /* Make the bar visible */
+        }
+
+        .switch-bar.active span {
+            transform: translateX(600px); /* Slide the text across the bar */
+        }
+
+        .floating-button {
+            position: fixed;
+            top: 50%;
+            right: 0; /* Move the button to the right side */
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: none;
+            border-radius: 5px 0 0 5px; /* Rounded left corners */
+            cursor: pointer;
+            outline: none;
+        }
+
+        .floating-button:hover {
+            background-color: gray;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
         }
 
         h1, h2 {
-            color: #333;
+            color: white; /* Headings changed to white */
         }
 
         .services-grid {
@@ -77,16 +120,16 @@
         }
 
         .service {
-            background-color: white;
-            border: 1px solid #ddd;
+            background-color: #333;
+            border: 1px solid #555;
             border-radius: 8px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         footer {
-            background-color: #af4c4c;
+            background-color: #222;
             color: white;
             text-align: center;
             padding: 10px 0;
@@ -108,11 +151,19 @@
 
     <section id="home">
         <h1>Welcome to Our Company</h1>
-        <p>Your gateway to cutting-edge technology and services</p>
+        <div class="switch-bar" id="switchBar">
+            <span>Your Gateway to Innovation</span>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a leading provider of innovative solutions, offering expertise in software development, analytics, and cutting-edge technology services.</p>
     </section>
 
     <section id="services">
         <h2>Our Services</h2>
+        <p>Discover a range of tailored solutions designed to meet your needs.</p>
         <div class="services-grid">
             <div class="service">
                 <h3>Software Development</h3>
@@ -152,18 +203,28 @@
             </div>
         </div>
     </section>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a leading technology solutions provider, delivering high-quality services in software development, analytics, and more. Our team of experts is dedicated to helping you achieve your goals with innovative and efficient solutions.</p>
-    </section>
+
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Reach out to us for more information or to discuss your requirements. We’re here to help you!</p>
-        <p>Email: info@company.com | Phone: +123 456 7890</p>
+        <p>We’d love to hear from you! Reach out to us at dasojutech@gmail.com or call +19452744426.</p>
     </section>
 
     <footer>
         <p>&copy; 2025 Company Name. All Rights Reserved.</p>
     </footer>
+
+    <button class="floating-button" onclick="startAnimation()"></button>
+
+    <script>
+        function startAnimation() {
+            const switchBar = document.getElementById('switchBar');
+            switchBar.classList.add('active');
+
+           
+            setTimeout(() => {
+                switchBar.classList.remove('active');
+            }, 4000); 
+        }
+    </script>
 </body>
 </html>
